@@ -1,0 +1,25 @@
+SELECT * FROM "USUARIOS";
+CREATE TABLE if not exists "USUARIOS" (
+                 	ID SERIAL PRIMARY KEY,
+                    USUARIO character varying,
+                    CONTRASENA character varying
+                    );
+CREATE TABLE IF NOT EXISTS "ENVASE" (
+					ID SERIAL PRIMARY KEY,
+					NOMBRE character varying,
+					DESCRIPCION character varying
+					);
+SELECT * FROM "ENVASE";
+CREATE TABLE IF NOT EXISTS "TAPA" (
+					ID SERIAL PRIMARY KEY,
+					NOMBRE character varying,
+					DESCRIPCION character varying
+					);
+SELECT * FROM "TAPA";
+CREATE TABLE IF NOT EXISTS "MOVIMIENTO ENVASE"(
+					ID_MOVIMIENTOENVASE SERIAL PRIMARY KEY,
+					ID_ENVASE integer,
+					CANTIDAD integer,
+					FECHA character varying,
+					FOREIGN KEY(ID_ENVASE) REFERENCES "ENVASE"(ID));
+SELECT * FROM "MOVIMIENTO ENVASE";
